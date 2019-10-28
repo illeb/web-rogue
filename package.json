@@ -26,7 +26,8 @@
     "webpack-dev-server": "3.7.2"
   },
   "dependencies": {
-    "phaser": "3.18.1"
+    "phaser": "3.18.1",
+    "rxjs": "^6.5.3"
   },
   "scripts": {
     "dev": "webpack --mode development && webpack-dev-server --mode development",
