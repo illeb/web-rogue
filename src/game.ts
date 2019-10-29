@@ -7,6 +7,7 @@
 
 import "phaser";
 import { GameScene } from "./scenes/game-scene";
+import { MenuScene } from "./scenes/MenuScene/menu-scene";
 
 const config: Phaser.Types.Core.GameConfig = {
   title: "web-rogue",
@@ -16,12 +17,12 @@ const config: Phaser.Types.Core.GameConfig = {
   height: 576,
   type: Phaser.AUTO,
   parent: "game",
-  scene: [GameScene],
+  scene: [MenuScene, GameScene],
   input: {
     keyboard: true,
     touch: true
   },
-  backgroundColor: "#3A99D9",
+  backgroundColor: "#000000",
   render: { pixelArt: true, antialias: false }
 };
 
