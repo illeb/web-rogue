@@ -8,6 +8,7 @@
 import "phaser";
 import { GameScene } from "./scenes/game-scene";
 import { MenuScene } from "./scenes/MenuScene/menu-scene";
+import Dexie from "dexie";
 
 const config: Phaser.Types.Core.GameConfig = {
   title: "web-rogue",
@@ -34,4 +35,5 @@ export class Game extends Phaser.Game {
 
 window.addEventListener("load", () => {
   var game = new Game(config);
+
 });

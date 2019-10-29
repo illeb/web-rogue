@@ -26,6 +26,7 @@
     "webpack-dev-server": "3.7.2"
   },
   "dependencies": {
+    "dexie": "^2.0.4",
     "phaser": "3.18.1",
     "rxjs": "^6.5.3"
   },
