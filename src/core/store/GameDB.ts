@@ -8,10 +8,10 @@ class MyAppDatabase extends Dexie {
 
   constructor () {
       super("web-rogue");
-      this.version(1).stores({
+      /*this.version(1).stores({
         contacts: '++id, first, last',
         emails: '++id, contactId, type, email',
-        phones: '++id, contactId, type, phone',);
+        phones: '++id, contactId, type, phone',);*/
   }
 }
 

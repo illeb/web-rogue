@@ -8,6 +8,7 @@
 import "phaser";
 import { GameScene } from "./scenes/game-scene";
 import { MenuScene } from "./scenes/MenuScene/menu-scene";
+import { LoadingScene } from "./scenes/LoadingScene/loading-scene";
 import Dexie from "dexie";
 
 const config: Phaser.Types.Core.GameConfig = {
@@ -18,7 +19,7 @@ const config: Phaser.Types.Core.GameConfig = {
   height: 576,
   type: Phaser.AUTO,
   parent: "game",
-  scene: [MenuScene, GameScene],
+  scene: [MenuScene, LoadingScene, GameScene],
   input: {
     keyboard: true,
     touch: true

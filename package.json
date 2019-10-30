@@ -31,7 +31,7 @@
     "rxjs": "^6.5.3"
   },
   "scripts": {
-    "dev": "webpack --mode development && webpack-dev-server --mode development",
+    "dev": "webpack --mode development && webpack-dev-server --mode development --port 8081",
     "build": "webpack --mode production && webpack-dev-server --mode production"
   },
   "repository": {
