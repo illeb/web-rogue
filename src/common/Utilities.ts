@@ -1,33 +1,20 @@
 export class Utilities {
-/*
-    public static int randInt(int min, int max) {
-        Random rand = new Random();
-        int randomNum = rand.nextInt((max - min) + 1) + min;
-        return randomNum;
-    }
-    public static int randInt(int min, int max, long seed) {
-        Random rand = new Random(seed);
-        int randomNum = rand.nextInt((max - min) + 1) + min;
-        return randomNum;
-    }
 
-    public static double randDouble(double min, double max) {
-        Random rand = new Random();
-        double randomNum = rand.nextDouble() * ((max - min)) + min;
-        return randomNum;
+    /**
+     * generate a random integer between min and max
+     */
+    public static randInt(min, max){
+        return Math.floor(Math.random() * (max - min + 1)) + min;
     }
-    public static double randDouble(double min, double max, long seed) {
-        Random rand = new Random(seed);
-        double randomNum = rand.nextDouble() * ((max - min)) + min;
-        return randomNum;
+    
+    /**
+    * Get a random floating point number between `min` and `max`.
+    */
+    public static randFloat(min, max) {
+        return Math.random() * (max - min) + min;
     }
-    public static double randWithProb(double[] numsToGenerate, double[] prob){
-        EnumeratedRealDistribution distribution =
-                new EnumeratedRealDistribution(numsToGenerate, prob);
-        return distribution.sample();
-    }
-
-    public enum Directions{
+  
+/*    public enum Directions{
         NORTH,
         EAST,
         SOUTH,
