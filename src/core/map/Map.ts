@@ -46,7 +46,7 @@ export class Map {
 
       if(tiles.length == 0)
         return null;
-      
+
       let randomTile: Phaser.Tilemaps.Tile;
       const randx = Utilities.randInt(0, tiles.length-1);
       const randy = Utilities.randInt(0, tiles.length);
@@ -58,5 +58,10 @@ export class Map {
     private getTilesByType(tileType: TileType) {
         //TODO
       return [];
-    }
+		}
+
+		isPositionFree(x: number, y: number): boolean {
+			// TODO
+			return true;
+		}
 }
