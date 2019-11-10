@@ -1,34 +1,32 @@
-import { Observable, Observer, Subject } from "rxjs";
+import { Observable, Subject } from "rxjs";
+import { Inventory } from '../items/inventory';
 
 export abstract class Creature {
-    public static HEALTHBAR_HEIGHT = 7;
-    public static HEALTHBAR_WIDTH = 20;
-    private _id: number;
-    get id(): number {
-        return this._id;
-    }
+		// Proprietà grafiche da gestire fuori dal model
+    // public static HEALTHBAR_HEIGHT = 7;
+    // public static HEALTHBAR_WIDTH = 20;
 
     private _HP: number;
     get HP(): number {
         return this.HP;
     }
 
-    _dead$: Subject<void>;
-    get dead$(): Observable<void> {
-        return this._dead$.asObservable();
-    }
+		protected deadSubject: Subject<void>;
+		readonly dead$: Observable<void>;
+
+    // private position: Tile;
+    public inventory: Inventory;
+
+		constructor(readonly id: number) {
+				this.deadSubject = new Subject();
+				this.dead$ = this.deadSubject.asObservable();
+		}
+
     addHP(value: number) {
         this._HP = this._HP + value >= 0 ? 0 :  this._HP + value;
 
         if (this._HP <= 0)
-            this._dead$.next();
+            this.deadSubject.next();
     }
 
-    // private Tile position;
-    // private Backpack backpack; Cambiare in inventory
-
-    public Creature(id: number) {
-        this._id = id;
-        this._dead$ = new Subject();
-    }
 }
