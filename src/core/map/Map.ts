@@ -35,6 +35,7 @@ export class Map {
         return this._type;
     }
 
+    
     constructor(level: number, type: MapType){
         this._level=level;
         // this.mapcontainer=mapcontainer;

@@ -1,5 +1,6 @@
 import { Coin } from "../objects/coin";
 import { Player } from "../objects/player";
+import { MapFactory } from "../core/map/MapFactory";
 
 export class GameScene extends Phaser.Scene {
   private background: Phaser.GameObjects.Image;
@@ -59,6 +60,9 @@ export class GameScene extends Phaser.Scene {
         fill: "#000000"
       }
     );
+    
+    new MapFactory().generate();
+
   }
 
   update(): void {
